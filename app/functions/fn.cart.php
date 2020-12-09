@@ -4368,6 +4368,17 @@ function fn_get_counts_amount($products)
     return $amount;
 }
 
+
+function fn_get_counts_amount($products)
+{
+    $amount = 0;
+
+    foreach ($products as $k => $v) {
+        $amount += $v['amount'];
+    }
+    return $amount;
+}
+
 /**
  * Checks whether product should be excluded from shipping calculation
  *
