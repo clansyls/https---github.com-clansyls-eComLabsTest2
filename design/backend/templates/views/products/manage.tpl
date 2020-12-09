@@ -21,6 +21,20 @@
 {/hook}
 
 <div class="table-responsive-wrapper longtap-selection">
+
+<div class="date-before-sync">
+{$TODAY=date(I)|date_format:"%d.%m.%Y"}
+<p>Сегодня <b style="color:blue; font-weight: bold; font-size:14px">{$TODAY}</b> До следующей синхронизации осталось <b style="color:red; font-weight: bold; font-size:14px" id="timer"></b></p>
+</div>
+<div class="amount-count">Amount:{$amountcount}</div>
+<div class="smarty-price-count">
+{assign var="countprice" value = 0}
+{foreach $products as $k => $v}
+{$countprice = $countprice + $v['price']}
+{/foreach}
+<p>Price:{$countprice}</p>
+</div>
+
     <table width="100%" class="table table-middle table--relative table-responsive products-table" data-ca-main-content>
     <thead data-ca-bulkedit-default-object="true" data-target=".products-table" data-ca-bulkedit-component="defaultObject">
     <tr>
