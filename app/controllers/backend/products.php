@@ -614,6 +614,10 @@ if ($mode == 'manage' || $mode == 'p_subscr') {
     $page = $search['page'];
     $valid_page = db_get_valid_page($page, $search['items_per_page'], $search['total_items']);
 
+    $amountcount = fn_get_counts_amount($products);
+
+    Tygh::$app['view']->assign('amountcount', $amountcount);
+
     if ($page > $valid_page) {
         $_REQUEST['page'] = $valid_page;
 
